@@ -11,22 +11,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getEmailDomain(email) {
-//   let result = new Map();
-//   email.forEach(em => {
-//     let parts = em.split('.').reverse();
-//     let emailPart='';
-//     for(let part of parts){
-//       emailPart+='.' + part
-//       if(result.has(emailPart)){
-//         result.set(emailPart)
-//       }
-//     }
-//   })
-//     let obj = Object.fromEntries(result);
-//     return obj
-// }
-
+  let domain;
+  let arr = email.split('')
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].charCodeAt(0) === 64) {
+      domain = arr.slice(i+1)
+    }
+  }
+  return domain.join('')
 }
+
+
+
+
 module.exports = {
   getEmailDomain
 };
