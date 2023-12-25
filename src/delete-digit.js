@@ -1,4 +1,4 @@
-const res = require('express/lib/response.js');
+// const res = require('express/lib/response.js');
 const { NotImplementedError } = require('../extensions/index.js');
 
 /**
@@ -15,9 +15,9 @@ const { NotImplementedError } = require('../extensions/index.js');
 function deleteDigit(n) {
   let arr = [];
   n = String(n);
-  for(let i = 0; i < n.length; i++){
-      arr.push(Number(n.replace(n[i], '')))
-    }
+  for (let i = 0; i < n.length; i++) {
+    arr.push(Number(n.replace(n[i], '')))
+  }
   return Math.max(...arr)
 }
 
