@@ -10,10 +10,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For the input 'prettyandsimple@example.com', the output should be 'example.com'
  *
  */
-function getEmailDomain(/* email */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function getEmailDomain(email) {
+  let domain;
+  let arr = email.split('')
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].charCodeAt(0) === 64) {
+      domain = arr.slice(i+1)
+    }
+  }
+  return domain.join('')
 }
+
+
+
 
 module.exports = {
   getEmailDomain
